@@ -12,11 +12,22 @@ import "../styles/index.scss";
 
 //render your react application
 let cronometro = 0;
+let segundo = 0;
+let minuto = 0;
+let hora = 0;
 
 setInterval(() => {
 	ReactDOM.render(
-		<Seconds seconds={cronometro} />,
+		<Seconds seconds={segundo} minuto={minuto} hora={hora} />,
+
 		document.querySelector("#app")
 	);
-	cronometro = cronometro + 1;
+	segundo++;
+	if (segundo === 10) {
+		segundo = 0;
+		minuto++;
+	} else if (minuto === 10) {
+		minuto = 0;
+		hora++;
+	}
 }, 1000);

@@ -8,14 +8,18 @@ const Seconds = props => {
 	return (
 		<div className="text-center mt-5 bg-dark text-light">
 			<h1 className="display-1">
-				<i className="fas fa-clock"> </i> {props.seconds}
+				<i className="fas fa-clock"> </i> {props.hora}
+				{props.minuto}
+				{props.seconds}
 			</h1>
 		</div>
 	);
 };
 
 Seconds.propTypes = {
-	seconds: PropTypes.number
+	seconds: PropTypes.number,
+	minuto: PropTypes.number,
+	hora: PropTypes.number
 };
 
 export default Seconds;
